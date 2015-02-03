@@ -11,11 +11,13 @@ class SessionsController extends \BaseController {
 	public function store(){
 		if(Auth::attempt(Input::only('email', 'password')))
 		{
-			Auth::user(); //set the session
+			$user = Auth::user(); //set the session
+			if ($user-> isAdmin()){
+				return Redirect::intended('admin');
+			}
 			return Redirect::route('articles.index');
 		}
-
-		return Redirect::back()->withInput();
+		return Redirect::back()->withInput()->withErrors('Username or Password are incorrect.');
 	}
 
 	public function destroy(){

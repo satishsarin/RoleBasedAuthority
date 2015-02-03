@@ -57,9 +57,11 @@ Route::filter('admin', function(){
   }
 });
 
+
 Route::filter('checkPermission', function(){
-	$resource_name =  func_get_args()[2];
-	if(! Auth::user()-> hasPermission($resource_name)){
+	#$resource_name =  func_get_args()[2];
+	$routeName = Route::currentRouteName();
+	if(! Auth::user()-> hasPermission($routeName)){
 		return "You are not authorized to view this page";
 	}
 

@@ -5,7 +5,7 @@ class ArticlesController extends \BaseController {
 	public function __construct()
     {
         //$this->beforeFilter('admin'); //check for role
-        $this->beforeFilter('checkPermission:articles'); //check for permission
+        $this->beforeFilter('checkPermission'); //check for permission
 
     }
 

@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'mnshankar\RoleBasedAuthority\RoleBasedAuthorityServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Frozennode\Administrator\AdministratorServiceProvider',
 
 	),
 
